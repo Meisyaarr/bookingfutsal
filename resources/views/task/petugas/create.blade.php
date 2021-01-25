@@ -6,7 +6,7 @@
         <div class="col-md-6 ">
             <div class="card border-0 shadow">
                 <div class="card-body">
-                    <form action="{{route('petugas.save')}}" enctype="multipart/form-data" method="POST">
+                    <form action="{{route('petugas.store')}}" enctype="multipart/form-data" method="POST">
                         @csrf
                         @if(session('success'))
                             <div class="alert alert-success">

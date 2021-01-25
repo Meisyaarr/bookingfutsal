@@ -7,10 +7,7 @@ use Illuminate\Http\Request;
 
 class PetugasController extends Controller
 {
-    public function __construct()
-    {
-        $this->petugas = new Petugas;
-    }
+
     public function index()
     {
         $petugass = Petugas::all();
@@ -22,5 +19,20 @@ class PetugasController extends Controller
     public function create()
     {
         return view('task.petugas.create');
+    }
+
+    public function store(Request $request){
+        $petugas = Petugas::create([
+            
+            'nama'=>$request->nama,
+            'password'=>$request->password,
+            'email'=>$request->email,
+            'level'=>$request->level,
+            'status'=>$request->status,
+            'option'=>$request->option,
+
+        ]);
+
+        return redirect()->back();
     }
 }

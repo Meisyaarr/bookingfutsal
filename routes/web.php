@@ -24,7 +24,7 @@ Route::group(['prefix' => 'petugas'], function(){
 
     Route::get('create', 'PetugasController@create')->name('petugas.create');
 
-    Route::post('save','PetugasController@store')->name('petugas.save');
+    Route::post('store','PetugasController@store')->name('petugas.store');
 
 });
 
@@ -33,6 +33,8 @@ Route::group(['prefix' => 'lapangan'], function(){
 
     Route::get('create', 'Lapangan\LapanganController@create')->name('lapangan.create');
 
+    Route::post('store','Lapangan\LapanganController@store')->name('lapangan.store');
+
 });
 
 Route::group(['prefix' => 'pelanggan'], function(){
@@ -40,12 +42,16 @@ Route::group(['prefix' => 'pelanggan'], function(){
 
     Route::get('create', 'Pelanggan\PelangganController@create')->name('task.pelanggan.create');
 
-
+    Route::post('store', 'Pelanggan\PelangganController@store')->name('pelanggan.store');
 
 });
 
 Route::group(['prefix' => 'transaksi'], function(){
     Route::get('index', 'Transaksi\TransaksiController@index')->name('task.transaksi.index');
+
+    Route::get('create', 'Transaksi\TransaksiController@create')->name('task.transaksi.create');
+    
+    Route::post('store', 'Transaksi\TransaksiController@store')->name('transaksi.store');
 
 });
 

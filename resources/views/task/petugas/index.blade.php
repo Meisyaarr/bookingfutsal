@@ -24,15 +24,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($petugass as $petugas)
                                     <tr>
-                                        <td>Dinda</td>
-                                        <td>Dinda@gmail</td>
-                                        <td>Admin</td>
+                                        <td>{{$petugas->nama}}</td>
+                                        <td>{{$petugas->email}}</td>
+                                        <td>{{$petugas->level}}</td>
                                         <td>
                                             <a href="" class="btn btn-sm btn-primary">Detail</a>
                                             <a href="" class="btn btn-sm btn-danger">Hapus</a>
                                         </td>
                                     </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

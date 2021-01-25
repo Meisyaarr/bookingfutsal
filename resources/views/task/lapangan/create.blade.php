@@ -7,7 +7,7 @@
 
             <div class="card border-0 shadow">
                 <div class="card-body">
-                    <form action="" enctype="multipart/form-data" method="POST">
+                    <form action="{{route('lapangan.store')}}" enctype="multipart/form-data" method="POST">
                         @csrf
                         @if(session('success'))
                             <div class="alert alert-success">
@@ -33,7 +33,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Bentuk</label>
-                                    <input type="text" name="Bentuk" class="form-control" id="">
+                                    <input type="text" name="bentuk" class="form-control" id="">
                                 </div>
                             </div>
 

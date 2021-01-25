@@ -18,18 +18,22 @@
                     <tr>
                         <th>Nama Lapangan</th>
                         <th>Harga</th>
+                        <th>Bentuk</th>
                         <th>Option</th>
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($lapangans as $lapangan)
                     <tr>
-                        <td>Lapangan</td>
-                        <td>Rp.100.000</td>
+                        <td>{{$lapangan->nama_lapangan}}</td>
+                        <td>{{$lapangan->harga}}</td>
+                        <td>{{$lapangan->bentuk}}</td>
                         <td>
                             <a href="" class="btn btn-sm btn-primary">Detail</a>
                             <a href="" class="btn btn-sm btn-danger">Hapus</a>
                         </td>
                     </tr>
+                    @endforeach
                     </tbody>
                     </table>
                     </div>

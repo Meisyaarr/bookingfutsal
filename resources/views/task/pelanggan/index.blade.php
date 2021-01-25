@@ -23,15 +23,17 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($pelanggans as $pelanggan)
                     <tr>
-                        <td>Lapangan</td>
-                        <td>Rumah</td>
-                        <td>123456</td>
+                        <td>{{$pelanggan->nama_pelanggan}}</td>
+                        <td>{{$pelanggan->alamat}}</td>
+                        <td>{{$pelanggan->no_telp}}</td>
                         <td>
                             <a href="" class="btn btn-sm btn-primary">Detail</a>
                             <a href="" class="btn btn-sm btn-danger">Hapus</a>
                         </td>
                     </tr>
+                    @endforeach
                     </tbody>
                     </table>
                     </div>

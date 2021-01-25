@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTransaksiTable extends Migration
+class CreatePetugassTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateTransaksiTable extends Migration
      */
     public function up()
     {
-        Schema::create('transaksi', function (Blueprint $table) {
+        Schema::create('petugass', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('no_transaksi');
-            $table->string('nama_pelanggan');
-            $table->string('pembayaran');
-            $table->string('lapangan');
+            $table->string('nama');
+            $table->string('password');
+            $table->string('email');
+            $table->string('level');
+            $table->string('status');
             $table->string('option');
             $table->timestamps();
         });
@@ -31,6 +32,6 @@ class CreateTransaksiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaksi');
+        Schema::dropIfExists('petugass');
     }
 }
