@@ -24,11 +24,10 @@ class TransaksiController extends Controller
         $transaksi = Transaksi::create([
             
             'customer_id'=>$request->customer_id,
-            'type_id'=>$request->type_id,
             'nama_pelanggan'=>$request->nama_pelanggan,
-            'pembayaran'=>$request->pembayaran,
-            'lapangan'=>$request->lapangan,
-            'option'=>$request->option,
+            'waktu_booking'=>$request->waktu_booking,
+            'tanggal_booking'=>$request->tanggal_booking,
+            'biaya_sewa'=>$request->biaya_sewa,
 
         ]);
 

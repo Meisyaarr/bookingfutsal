@@ -15,11 +15,8 @@ class CreateLapangansTable extends Migration
     {
         Schema::create('lapangans', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_lapangan');
-            $table->string('harga');
-            $table->string('bentuk');
-            $table->string('waktu_booking');
-            $table->string('option');
+            $table->string('kode');
+            $table->string('tipe');
             $table->timestamps();
         });
     }

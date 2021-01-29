@@ -26,6 +26,11 @@ Route::group(['prefix' => 'petugas'], function(){
 
     Route::post('store','PetugasController@store')->name('petugas.store');
 
+    Route::get('edit/{petugas}', 'PetugasController@edit')->name('petugas.edit');
+
+    Route::patch('update/{petugas}', 'PetugasController@update')->name('petugas.update');
+    Route::delete('delete/{petugas}', 'PetugasController@destroy')->name('petugas.delete');
+
 });
 
 Route::group(['prefix' => 'lapangan'], function(){
@@ -35,6 +40,11 @@ Route::group(['prefix' => 'lapangan'], function(){
 
     Route::post('store','Lapangan\LapanganController@store')->name('lapangan.store');
 
+    Route::get('edit/{lapangan}', 'Lapangan\LapanganController@edit')->name('lapangan.edit');
+
+    Route::patch('update/{lapangan}', 'Lapangan\LapanganController@update')->name('lapangan.update');
+    Route::delete('delete/{lapangan}', 'Lapangan\LapanganController@destroy')->name('lapangan.delete');
+
 });
 
 Route::group(['prefix' => 'pelanggan'], function(){
@@ -43,6 +53,11 @@ Route::group(['prefix' => 'pelanggan'], function(){
     Route::get('create', 'Pelanggan\PelangganController@create')->name('task.pelanggan.create');
 
     Route::post('store', 'Pelanggan\PelangganController@store')->name('pelanggan.store');
+
+    Route::get('edit/{pelanggan}', 'Pelanggan\PelangganController@edit')->name('pelanggan.edit');
+
+    Route::patch('update/{pelanggan}', 'Pelanggan\PelangganController@update')->name('pelanggan.update');
+    Route::delete('delete/{pelanggan}', 'Pelanggan\PelangganController@destroy')->name('pelanggan.delete');
 
 });
 

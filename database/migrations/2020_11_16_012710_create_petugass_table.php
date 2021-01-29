@@ -20,7 +20,6 @@ class CreatePetugassTable extends Migration
             $table->string('email');
             $table->string('level');
             $table->string('status');
-            $table->string('option');
             $table->timestamps();
         });
     }

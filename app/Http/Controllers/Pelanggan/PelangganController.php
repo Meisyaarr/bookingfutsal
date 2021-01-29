@@ -20,15 +20,36 @@ class PelangganController extends Controller
         return view('task.pelanggan.create');
     }
 
+    public function edit($id)
+    {
+        $pelanggan = Pelanggan::findOrFail($id);
+        return view('task.pelanggan.edit', compact('pelanggan'));
+    }
+
     public function store(Request $request){
         $pelanggan = Pelanggan::create([
             
             'nama_pelanggan'=>$request->nama_pelanggan,
             'alamat'=>$request->alamat,
             'no_telp'=>$request->no_telp,
-            'option'=>$request->option,
 
         ]);
+
+        return redirect()->back();
+    }
+
+    public function update(Request $request, $id)
+    {
+        $pelanggans = Pelanggan::find($id);
+        $pelanggans->update($request-> all());
+
+        return redirect()->back();
+    }
+
+    public function destroy($id)
+    {
+        $pelanggans = Pelanggan::find($id);
+        $pelanggans->delete($pelanggans->all());
 
         return redirect()->back();
     }

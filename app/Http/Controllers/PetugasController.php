@@ -21,6 +21,12 @@ class PetugasController extends Controller
         return view('task.petugas.create');
     }
 
+    public function edit($id)
+    {
+        $petugas = Petugas::findOrFail($id);
+        return view('task.petugas.edit', compact('petugas'));
+    }
+
     public function store(Request $request){
         $petugas = Petugas::create([
             
@@ -29,9 +35,24 @@ class PetugasController extends Controller
             'email'=>$request->email,
             'level'=>$request->level,
             'status'=>$request->status,
-            'option'=>$request->option,
 
         ]);
+
+        return redirect()->back();
+    }
+
+    public function update(Request $request, $id)
+    {
+        $petugass = Petugas::find($id);
+        $petugass->update($request-> all());
+
+        return redirect()->back();
+    }
+
+    public function destroy($id)
+    {
+        $petugass = Petugas::find($id);
+        $petugass->delete($petugass->all());
 
         return redirect()->back();
     }

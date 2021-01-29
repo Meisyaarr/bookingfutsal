@@ -9,7 +9,7 @@
                     <h5 class="font-weight-bold">Master Data Pelanggan</h5>
                     <div class="d-flex">
                         <div>
-                            <a href="{{route('task.pelanggan.create')}}" class="btn btn-warning">Tambah Data</a>
+                        <a href="{{route('task.pelanggan.create')}}" class="btn btn-info">Tambah Data</a>
                         </div>
                     </div>
                     <div>
@@ -29,8 +29,12 @@
                         <td>{{$pelanggan->alamat}}</td>
                         <td>{{$pelanggan->no_telp}}</td>
                         <td>
-                            <a href="" class="btn btn-sm btn-primary">Detail</a>
-                            <a href="" class="btn btn-sm btn-danger">Hapus</a>
+                            <form action="{{route('pelanggan.delete',$pelanggan->id)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                    <a href="{{route('pelanggan.edit',$pelanggan->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

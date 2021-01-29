@@ -10,7 +10,7 @@
                     
                         <div class="d-flex px-2 py-2">
                             <div>
-                                <a href="{{route('petugas.create')}}" class="btn btn-warning ">Tambah Petugas</a>
+                                <a href="{{route('petugas.create')}}" class="btn btn-info">Tambah Petugas</a>
                             </div>
                         </div>
                         <div>
@@ -30,8 +30,12 @@
                                         <td>{{$petugas->email}}</td>
                                         <td>{{$petugas->level}}</td>
                                         <td>
-                                            <a href="" class="btn btn-sm btn-primary">Detail</a>
-                                            <a href="" class="btn btn-sm btn-danger">Hapus</a>
+                                            <form action="{{route('petugas.delete',$petugas->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                                <a href="{{route('petugas.edit',$petugas->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

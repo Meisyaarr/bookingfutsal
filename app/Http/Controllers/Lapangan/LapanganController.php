@@ -20,16 +20,35 @@ class LapanganController extends Controller
         return view('task.lapangan.create');
     }
 
+    public function edit($id)
+    {
+        $lapangan = Lapangan::findOrFail($id);
+        return view('task.lapangan.edit', compact('lapangan'));
+    }
+
     public function store(Request $request){
         $lapangan = Lapangan::create([
             
-            'nama_lapangan'=>$request->nama_lapangan,
-            'harga'=>$request->harga,
-            'bentuk'=>$request->bentuk,
-            'waktu_booking'=>$request->waktu_booking,
-            'option'=>$request->option,
+            'kode'=>$request->kode,
+            'tipe'=>$request->tipe,
 
         ]);
+
+        return redirect()->back();
+    }
+
+    public function update(Request $request, $id)
+    {
+        $lapangans = Lapangan::find($id);
+        $lapangans->update($request-> all());
+
+        return redirect()->back();
+    }
+
+    public function destroy($id)
+    {
+        $lapangans = Lapangan::find($id);
+        $lapangans->delete($lapangans->all());
 
         return redirect()->back();
     }

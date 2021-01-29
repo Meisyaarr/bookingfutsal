@@ -16,11 +16,10 @@ class CreateTransaksisTable extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->increments('id');
             $table->string('customer_id');
-            $table->string('type_id');
             $table->string('nama_pelanggan');
-            $table->string('pembayaran');
-            $table->string('lapangan');
-            $table->string('option');
+            $table->string('waktu_booking');
+            $table->string('tanggal_booking');
+            $table->string('biaya_sewa');
             $table->timestamps();
         });
     }

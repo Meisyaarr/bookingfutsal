@@ -6,13 +6,9 @@
         <div class="col-md-8">
             <div class="card border-0 shadow">
                 <div class="card-body">
-                    <form action="{{route('lapangan.store')}}" enctype="multipart/form-data" method="POST">
+                    <form action="{{route('lapangan.update',$lapangan->id)}}" enctype="multipart/form-data" method="POST">
                         @csrf
-                        @if(session('success'))
-                            <div class="alert alert-success">
-                                {{session('success')}}
-                            </div>
-                        @endif
+                        @method('PATCH')
                         <div class="row">
 
                             <div class="col-md-6">
@@ -20,22 +16,18 @@
                                     <label for="">Kode</label>
                                     <input type="text" name="kode" class="form-control" id="" >
                                 </div>
-
                             </div>
-                                {{$errors->first('name')}}
+                            
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Tipe</label>
-                                    <select type="text" name="tipe" class="form-control" id="">
-                                        <option>sintetis</option>
-                                        <option>vinyl</option>
-                                    </select>
+                                    <input type="text" name="tipe" class="form-control" id="">
                                 </div>
                             </div>
 
                         </div>
                         <div>
-                            <button type="submit" class="btn btn-outline-info">Masukan Data Baru</button>
+                            <button type="submit" class="btn btn-outline-info">Save</button>
                         </div>
                     </form>
                 </div>

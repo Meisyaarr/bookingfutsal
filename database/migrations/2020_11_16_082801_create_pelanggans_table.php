@@ -18,7 +18,6 @@ class CreatePelanggansTable extends Migration
             $table->string('nama_pelanggan');
             $table->string('alamat');
             $table->string('no_telp');
-            $table->string('option');
             $table->timestamps();
         });
     }

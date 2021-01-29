@@ -10,7 +10,7 @@
                     
                         <div class="d-flex px-2 py-2">
                             <div>
-                                <a href="{{route('task.transaksi.create')}}" class="btn btn-warning ">Tambah Data</a>
+                                <a href="{{route('task.transaksi.create')}}" class="btn btn-success">Booking</a>
                             </div>
                         </div>
                         <div>
@@ -18,20 +18,18 @@
                                 <thead>
                                     <tr>
                                         <th>Nama Pelanggan</th>
-                                        <th>Pembayaran</th>
-                                        <th>Lapangan</th>
-                                        <th>Option</th>
+                                        <th>Waktu Booking</th>
+                                        <th>Tanggal Booking</th>
+                                        <th>Biaya Sewa</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($transaksis as $transaksi)
                                     <tr>
                                         <td>{{$transaksi->nama_pelanggan}}</td>
-                                        <td>{{$transaksi->pembayaran}}</td>
-                                        <td>{{$transaksi->lapangan}}</td>
-                                        <td>
-                                            <a href="" class="btn btn-sm btn-success">Booking</a>
-                                        </td>
+                                        <td>{{$transaksi->waktu_booking}}</td>
+                                        <td>{{$transaksi->tanggal_booking}}</td>
+                                        <td>{{$transaksi->biaya_sewa}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
